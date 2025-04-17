@@ -12,6 +12,7 @@ RUN apt-get update && \
         make \
         coreutils \
         zlib1g-dev \
+        wget \
         rsync \
         && rm -rf /var/lib/apt/lists/*
 
@@ -30,4 +31,4 @@ RUN ls -l && \
 ENV PATH="$KRAKEN2_DIR:$PATH"
 
 # Default command
-ENTRYPOINT ["kraken2", "--help"]
+CMD ["kraken2", "--help"]
